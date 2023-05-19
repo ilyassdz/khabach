@@ -1,0 +1,130 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+@prefix : <http://example.com/ontologies/conditions#>.
+
+### Ontologie de Température ###
+
+:Température rdf:type owl:Class ;
+
+    rdfs:label "Température" .
+
+:élevé rdf:type owl:Class ;
+
+    rdfs:label "Élevé" ;
+
+    rdfs:subClassOf :Température ;
+
+    owl:equivalentClass [
+
+        rdf:type owl:Restriction ;
+
+        owl:onProperty :a ;
+
+        owl:someValuesFrom [
+
+            rdf:type owl:Class ;
+
+            owl:oneOf ( [ rdf:type owl:NamedIndividual ; owl:hasValue "Très élevée" ] )
+
+        ]
+
+    ] .
+
+:modéré rdf:type owl:Class ;
+
+    rdfs:label "Modéré" ;
+
+    rdfs:subClassOf :Température ;
+
+    owl:equivalentClass [
+
+        rdf:type owl:Restriction ;
+
+        owl:onProperty :a ;
+
+        owl:someValuesFrom [
+
+            rdf:type owl:Class ;
+
+            owl:oneOf ( [ rdf:type owl:NamedIndividual ; owl:hasValue "Modéré" ] )
+
+        ]
+
+    ] .
+
+### Ontologie de Vente ###
+
+:Vente rdf:type owl:Class ;
+
+    rdfs:label "Vente" .
+
+:faible rdf:type owl:Class ;
+
+    rdfs:label "Faible" ;
+
+    rdfs:subClassOf :Vente ;
+
+    owl:equivalentClass [
+
+        rdf:type owl:Restriction ;
+
+        owl:onProperty :b ;
+
+        owl:someValuesFrom [
+
+            rdf:type owl:Class ;
+
+            owl:oneOf ( [ rdf:type owl:NamedIndividual ; owl:hasValue "Faible" ] )
+
+        ]
+
+    ] .
+
+:fort rdf:type owl:Class ;
+
+    rdfs:label "Fort" ;
+
+    rdfs:subClassOf :Vente ;
+
+    owl:equivalentClass [
+
+        rdf:type owl:Restriction ;
+
+        owl:onProperty :b ;
+
+        owl:someValuesFrom [
+
+            rdf:type owl:Class ;
+
+            owl:oneOf ( [ rdf:type owl:NamedIndividual ; owl:hasValue "Fort" ] )
+
+        ]
+
+    ] .
+
+:très_fort rdf:type owl:Class ;
+
+    rdfs:label "Très fort" ;
+
+    rdfs:subClassOf :Vente ;
+
+    owl:equivalentClass [
+
+        rdf:type owl:Restriction ;
+
+        owl:onProperty :b ;
+
+        owl:someValuesFrom [
+
+            rdf:type owl:Class ;
+
+            owl:oneOf ( [ rdf:type owl:NamedIndividual ; owl:hasValue "Très fort" ] )
+
+        ]
+
+    ] .
+
